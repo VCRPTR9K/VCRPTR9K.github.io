@@ -660,6 +660,18 @@ box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.17);
     
 }
 
+#funstarts {
+    width:50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #1441d9;
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.17);
+-moz-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.17);
+box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.17);
+    cursor: pointer;
+    
+}
+
 
 #funstarts:hover {
     width:52px;
