@@ -1,5 +1,6 @@
 * {
   border: 0px dashed green;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -73,6 +74,7 @@ h1 {
  */
 
 hr {
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -114,6 +116,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */
 }
@@ -276,6 +279,7 @@ fieldset {
  */
 
 legend {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -313,6 +317,7 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -467,7 +472,12 @@ input[type=range]::-ms-track {
 body {
   background: #0D0D0E;
   font-family: Xynta;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
   max-height: 999999px;
@@ -480,8 +490,15 @@ body {
 }
 
 .l-wrapper {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
   width: 100%;
@@ -489,7 +506,6 @@ body {
 }
 
 .navigation {
-  height: 40px;
   margin: 0 auto;
 }
 
@@ -506,29 +522,66 @@ body {
 }
 
 .wrapper {
-  display: block;
-  height: 80vh;
+  min-height: 70vh;
+  margin: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   position: relative;
   z-index: 40;
 }
 
-
 .art {
-  width: 500px;
-  height: 500px;
+  /* width: 50%; */
+  min-width: 600px;
+  max-width: 900px;
+}
+
+.art__container {
+  position: relative;
+  /* width: auto;
+  max-width: 500px; */
+  width: 100%;
+  /* height: 0; */
+  padding-bottom: 100%;
+}
+
+.art__content {
+  /* width: 500px;
+  height: 500px; */
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
   background-image: url("../images/Sample.png");
-  /* background: contain, no-repeat, ; */
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
   border-radius: 4px;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .upload {
@@ -542,6 +595,7 @@ body {
     align-items: flex-start;
     align-self: flex-start;
     display: block; */
+  -ms-flex-item-align: start;
   align-self: flex-start;
 }
 
@@ -583,7 +637,11 @@ body {
 }
 
 .control {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
   margin-bottom: 2em;
 
@@ -592,19 +650,27 @@ body {
 
 .toolbar {
   position: relative;
-  z-index: 200;
+  z-index: 10;
   font-family: 'IBM Plex Mono', monospace;
-  margin: 20px auto 0;
+  margin: 20px auto 40px;
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 4px;
   width: 1000px;
   height: 58px;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-flow: nowrap;
   flex-flow: nowrap;
 }
 
@@ -614,9 +680,19 @@ body {
 .ratio {
   width: 25%;
   padding: 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+}
+
+.size.-mobile {
+  display: none;
 }
 
 .switch {
@@ -656,6 +732,24 @@ body {
   margin-top: -8px;
 }
 
+.ratio__item {
+  opacity: 0.6;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ratio__item.is-active {
+  opacity: 1;
+}
+
 .rectangle1 {
   width: 22px;
   height: 22px;
@@ -681,6 +775,7 @@ input[type=range]::-webkit-slider-thumb {
   background: #ffffff;
   cursor: pointer;
   margin-top: -8px;
+  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   /* Add cool effects to your sliders! */
 }
@@ -712,6 +807,7 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 1px;
@@ -850,9 +946,6 @@ input[type=range]:focus::-ms-fill-upper {
 } */
 
 
-
-.examples {}
-
 .instruction {
   position: absolute;
   top: 0;
@@ -862,13 +955,28 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: center;
   font-size: 14px;
   line-height: 1.57;
-  height: 100%;
   width: 195px;
   padding: 0 125px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.instruction.is-active {
+  background: #0D0D0E;
+  z-index: 10;
   height: 100vh;
 }
 
@@ -883,6 +991,8 @@ input[type=range]:focus::-ms-fill-upper {
   padding-left: 49px;
   min-height: 24px;
   background: url("data:image/svg+xml, %3Csvg width='27' height='24' viewBox='0 0 27 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.51025 11.3364H18.5003' stroke='white' stroke-width='2' stroke-linecap='square' /%3E%3Cpath d='M24.1619 0.280762V22.0948' stroke='white' stroke-width='2' /%3E%3Cpath d='M7.13132 17.8426L0.611816 11.3231L7.13132 4.80579' stroke='white' stroke-width='2' stroke-linecap='square' /%3E%3C/svg%3E") left center no-repeat;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
   transition: all .2s ease;
   position: relative;
   z-index: 15;
@@ -892,6 +1002,8 @@ input[type=range]:focus::-ms-fill-upper {
   position: absolute;
   top: 24px;
   left: -1000%;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
   transition: all .2s ease;
   padding: 70px 125px 40px;
   background: #0D0D0E;
@@ -909,6 +1021,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .instruction .instruction__button svg path {
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
   transition: all .2s ease;
 }
 
@@ -937,6 +1051,8 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: center;
   color: #FFFFFF;
   text-decoration: none;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
   transition: all .2s ease;
   border-bottom-color: transparent;
 }
@@ -948,6 +1064,8 @@ input[type=range]:focus::-ms-fill-upper {
 .tp__btn {
   opacity: 0.2;
   cursor: pointer;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
   transition: all .2s ease;
 }
 
@@ -957,6 +1075,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .bw__switch {
   border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 11.7163px;
   width: 43px;
@@ -977,7 +1096,11 @@ input[type=range]:focus::-ms-fill-upper {
   position: absolute;
   top: 50%;
   left: 4.15px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
   transition: all .2s ease;
 }
 
@@ -993,6 +1116,8 @@ input[type=range]:focus::-ms-fill-upper {
 .bw__option {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.2);
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
   transition: all .2s ease;
 }
 
@@ -1016,11 +1141,12 @@ input[type=range]:focus::-ms-fill-upper {
   }
 
   .wrapper {
-    margin: 0 20px;
+    margin: 30px 20px;
     height: auto;
+    min-height: auto;
   }
 
-  .art {
+  .art__content {
     margin-top: 25px;
   }
 
@@ -1032,6 +1158,7 @@ input[type=range]:focus::-ms-fill-upper {
   }
 
   .instruction__button {
+    -ms-flex-item-align: end;
     align-self: flex-end;
   }
 
@@ -1049,6 +1176,7 @@ input[type=range]:focus::-ms-fill-upper {
   }
 
   .toolbar {
+    -ms-flex-flow: wrap;
     flex-flow: wrap;
     margin: 20px 20px 0;
     border: none;
@@ -1061,25 +1189,36 @@ input[type=range]:focus::-ms-fill-upper {
   .size,
   .ratio {
     width: 50%;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
     padding: 20px 0;
   }
 
   .tp {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
     order: 1;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .size {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
     order: 2;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 63px;
   }
 
   .bw {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
     order: 3;
   }
 
   .ratio {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
     order: 4;
   }
 
@@ -1089,8 +1228,26 @@ input[type=range]:focus::-ms-fill-upper {
 
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
+  .size.-desctop {
+    display: none;
+  }
+
+  .size.-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
   .art {
-    max-width: 270px;
+    min-width: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #arttext {
+    font-size: 50px;
   }
 }

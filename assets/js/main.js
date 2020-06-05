@@ -123,10 +123,23 @@ function readURL() {
 (function () {
   let rng = document.getElementById('myRange'),
     text = document.getElementById('arttext');
-  rng.addEventListener("input",
-    function () {
-      text.style.fontSize = rng.value + 'px'
-    });
+  if (rng) {
+    rng.addEventListener("input",
+      function () {
+        text.style.fontSize = rng.value + 'px'
+      });
+  }
+})();
+//for mobile
+(function () {
+  let rng = document.getElementById('myRangeMob'),
+    text = document.getElementById('arttext');
+  if (rng) {
+    rng.addEventListener("input",
+      function () {
+        text.style.fontSize = rng.value + 'px'
+      });    
+  }
 })();
 
 // change text align
@@ -214,6 +227,30 @@ const addHandlerToggle = () => {
     });
 
 };
+
+// change ratio
+const changeRatio = () => {
+  let ratio1 = document.getElementById('ratio1'),
+    ratio9 = document.getElementById('ratio9'),
+    container = document.getElementById('art-container');
+
+  ratio1.classList.add('is-active');
+
+  ratio1.addEventListener('click', function (e) {
+    this.classList.add('is-active');
+    ratio9.classList.remove('is-active');
+
+    container.style.paddingBottom = '100%';
+  });
+  ratio9.addEventListener('click', function (e) {
+    this.classList.add('is-active');
+
+    ratio1.classList.remove('is-active');
+
+    container.style.paddingBottom = '56.25%';
+  });
+};
+
 addHandlerBtns();
 addHandlerToggle();
-
+changeRatio();

@@ -44,22 +44,24 @@
                 </div>
             </div>
         </div>
-
-        <div class="art" id="art">
-            <!-- <div class="upload" id="upload">загрузить фон</div> -->
-            <div class="upload">
-                <input id="upload" type="file" autocomplete="off" />
-                <label for="upload">Загрузить фон</label>
-            </div>
-            <div id="arttext" contenteditable="true">ВАББА ЛАББА ДАБ ДАБ</div>
-            <div class="control">
-                <button onclick="toggleMic(); recordingInvoker();"
-                        title="Click start needed as security in browser increased and voice mic can only be started from a gesture on page">
-                    ЗАПУСТИТЬ
-                </button>
-            </div>
+        <div class="art">
+            <div class="art__container" id="art-container">
+                <div class="art__content" id="art">
+                    <!-- <div class="upload" id="upload">загрузить фон</div> -->
+                    <div class="upload">
+                        <input id="upload" type="file" autocomplete="off" />
+                        <label for="upload">Загрузить фон</label>
+                    </div>
+                    <div id="arttext">ВАББА ЛАББА ДАБ ДАББ</div>
+                    <div class="control">
+                        <button onclick="toggleMic(); recordingInvoker();"
+                                title="Click start needed as security in browser increased and voice mic can only be started from a gesture on page">
+                            ЗАПУСТИТЬ
+                        </button>
+                    </div>
+                </div>            
+            </div>            
         </div>
-
     </main>
 
     <div class="toolbar">
@@ -76,16 +78,24 @@
             <div class="tp__btn -right icon-right" id="text-align-right"></div>
         </div>
 
-        <div class="size">Tt
+        <div class="size -desctop">Tt
             <div class="slidecontainer">
                 <input type="range" min="40" max="120" value="90" step="1" class="slider" id="myRange"></div>
         </div>
+        <div class="size -mobile">Tt
+            <div class="slidecontainer">
+                <input type="range" min="20" max="120" value="50" step="1" class="slider" id="myRangeMob"></div>
+        </div>
 
         <div class="ratio">
-            <div class="rectangle1"></div>
-            1:1
-            <div class="rectangle9"></div>
-            9:16
+            <div class="ratio__item" id="ratio1">
+                <div class="rectangle1"></div>
+                1:1
+            </div>
+            <div class="ratio__item" id="ratio9">
+                <div class="rectangle9"></div>
+                16:9
+            </div>
         </div>
     </div>    
 </div>
