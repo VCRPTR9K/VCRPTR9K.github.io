@@ -1,16 +1,21 @@
-var div, start_button, mic, micEnabled
+var div, mic, micEnabled
 
 function setup() {
   noCanvas();
   div = document.getElementById('arttext');
-    
     mic = new p5.AudioIn();
 }
 
 function toggleMic() {
     mic.start();
-    micEnabled = true;
 }
+
+
+function touchStarted() {
+    getAudioContext().resume(); 
+} 
+
+
 
 
 function draw() {

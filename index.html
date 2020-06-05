@@ -54,10 +54,10 @@
                     </div>
                     <div id="arttext" contenteditable="true">Текст здесь</div>
                     <div class="control">
-                        <button id="funstarts" onclick="toggleMic();"
-                                title="Click to start">
+                        <div id="funstarts" onclick="toggleMic(); touchStarted();"
+                                title="Нажмите, чтобы включить звук">
                             ЗАПУСТИТЬ
-                        </button>
+                        </div>
                     </div>
                 </div>            
             </div>            
@@ -112,6 +112,9 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gifshot/0.3.2/gifshot.min.js"></script>
 <script type="text/javascript" src="assets/js/html2canvas.min.js"></script>
 
+
+    
+    
 <script type="text/javascript" src="assets/js/p5.min.js"></script>
 <script type="text/javascript" src="assets/js/p5.sound.min.js"></script>
 <script type="text/javascript" src="assets/js/sketch.js"></script>
