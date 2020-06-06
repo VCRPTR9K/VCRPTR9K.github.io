@@ -1,99 +1,4 @@
-let animationFrames = []
-let startRecordingTimerId = null
 
-function recordingInvoker() {
-  if (startRecordingTimerId) {
-    stopRecording()
-    return
-  }
-
-  startRecording()
-}
-
-function saveSnapShotInMemory() {
-  html2canvas(document.querySelector('.art'), {
-    scale: 0
-  }).then(canvas => {
-    animationFrames.push(canvas.toDataURL('image/png'))
-  })
-}
-
-function downloadBase64File(linkSource, fileName) {
-  const downloadLink = document.createElement('a')
-  document.body.appendChild(downloadLink)
-
-  downloadLink.href = linkSource
-  downloadLink.target = '_self'
-  downloadLink.download = fileName
-  downloadLink.click()
-}
-
-function startRecording() {
-  startRecordingTimerId = window.setInterval(() => {
-    saveSnapShotInMemory()
-  }, 50)
-}
-
-function stopRecording() {
-  // stop recording
-  if (startRecordingTimerId) {
-    clearTimeout(startRecordingTimerId)
-    startRecordingTimerId = null
-  }
-
-  // Create the gif animation from animationFrames array
-  gifshot.createGIF({
-    images: animationFrames,
-    numWorkers: 2
-  }, function (obj) {
-    if (!obj.error) {
-      downloadBase64File(obj.image, 'animation.gif')
-    }
-  })
-}
-
-// spoiler
-const spoiler = (() => {
-  const root = document.querySelector('.js-spoiler');
-
-  if (root !== undefined && root !== null) {
-    const elements = (root) ? [...root.querySelectorAll('.js-spoiler-toggle')] : [];
-
-    elements.forEach((element) => {
-      element.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.currentTarget.parentNode.classList.toggle('is-active');
-
-        return false;
-      });
-
-    });
-  }
-})();
-
-
-$(document).mouseup(function (e) {
-  let $root = $(".js-spoiler");
-  if (!$root.is(e.target)
-    && $root.has(e.target).length === 0) {
-
-    $root.removeClass('is-active');
-  }
-});
-
-
-$(".js-spoiler").swipe({
-  swipeStatus: function (event, phase, direction, distance, duration, fingers) {
-    if (phase == "move" && direction == "right") {
-      $(".js-spoiler").addClass("is-active");
-      return false;
-    }
-    if (phase == "move" && direction == "left") {
-      $(".js-spoiler").removeClass("is-active");
-      return false;
-    }
-  }
-});
 
 // upload image
 document.getElementById('upload').addEventListener('change', readURL, true);
@@ -246,3 +151,8 @@ const changeRatio = () => {
 addHandlerBtns();
 addHandlerToggle();
 changeRatio();
+
+
+$('#funstarts').click(function() {
+  $('#funstarts').hide();
+})
