@@ -439,8 +439,13 @@ input[type=range]::-ms-track {
 /*  2. Fonts  ============================================================== */
 
 @font-face {
-  src: url("../fonts/RPTR9KGX.ttf") format("truetype");
-  font-family: RPTR9KGX;
+  src: url("../fonts/RPTR9K.ttf") format("truetype");
+  font-family: RPTR9K;
+}
+
+@font-face {
+  src: url("../fonts/RPTR9K–18.ttf") format("truetype");
+  font-family: RPTR9K-18;
 }
 
 @font-face {
@@ -471,7 +476,7 @@ input[type=range]::-ms-track {
 
 body {
   background: #0D0D0E;
-  font-family: RPTR9KGX;
+  font-family: RPTR9K;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -628,13 +633,14 @@ body {
 }
 
 #arttext {
-  font-family: RPTR9KGX;
+  font-family: RPTR9K-18;
   color: white;
   font-size: 90px;
   text-align: center;
   display: block;
   padding: 10px 15px;
   width: 100%;
+    transform: rotate(-16deg);
 }
 
 #arttext:focus {
@@ -1077,7 +1083,7 @@ input[type=range]::-ms-fill-upper {
 
 .font {
   color: white;
-  font-family: RPTR9KGX;
+  font-family: RPTR9K;
   width: 1000px;
   margin: 10px auto;
   font-size: 4em;
