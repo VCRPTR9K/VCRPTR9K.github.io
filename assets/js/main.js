@@ -1,4 +1,46 @@
 
+// spoiler
+const spoiler = (() => {
+  const root = document.querySelector('.js-spoiler');
+
+  if (root !== undefined && root !== null) {
+    const elements = (root) ? [...root.querySelectorAll('.js-spoiler-toggle')] : [];
+
+    elements.forEach((element) => {
+      element.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.currentTarget.parentNode.classList.toggle('is-active');
+
+        return false;
+      });
+
+    });
+  }
+})();
+
+
+$(document).mouseup(function (e) {
+  let $root = $(".js-spoiler");
+  if (!$root.is(e.target)
+    && $root.has(e.target).length === 0) {
+
+    $root.removeClass('is-active');
+  }
+});
+
+
+$(".js-spoiler").swipe({
+  swipeStatus: function (event, phase, direction, distance, duration, fingers) {
+    if (phase == "move" && direction == "right") {
+      $(".js-spoiler").addClass("is-active");
+      return false;
+    }
+    if (phase == "move" && direction == "left") {
+      $(".js-spoiler").removeClass("is-active");
+      return false;
+    }
+  }
+});
 
 // upload image
 document.getElementById('upload').addEventListener('change', readURL, true);
@@ -151,7 +193,6 @@ const changeRatio = () => {
 addHandlerBtns();
 addHandlerToggle();
 changeRatio();
-
 
 $('#funstarts').click(function() {
   $('#funstarts').hide();
