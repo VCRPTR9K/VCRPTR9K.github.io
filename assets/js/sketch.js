@@ -22,5 +22,5 @@ function draw() {
   micLevel = mic.getLevel();
   // weightControl = sin(frameCount/1.0)*100;
   div.style['font-variation-settings'] = `"wght" ${micLevel * 4000}, "wdth" ${micLevel * 5000}`;
- console.log(micLevel);
+ // console.log(micLevel);
 }
