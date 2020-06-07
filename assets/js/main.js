@@ -22,9 +22,10 @@ const spoiler = (() => {
 
 $(document).mouseup(function (e) {
   let $root = $(".js-spoiler"),
-    $downloadBtn = $('.font-download');
+    $downloadBtn = $('.font-download'),
+    $dino = $('.dino-image');
   if (!$root.is(e.target)
-    && $root.has(e.target).length === 0 && !$downloadBtn.is(e.target) && $downloadBtn.has(e.target).length === 0) {
+    && $root.has(e.target).length === 0 && !$downloadBtn.is(e.target) && $downloadBtn.has(e.target).length === 0 && !$dino.is(e.target) && $dino.has(e.target).length === 0) {
 
     $root.removeClass('is-active');
     $('body').removeClass('open-spoiler');
@@ -194,9 +195,19 @@ const changeRatio = () => {
   });
 };
 
+const dino = () => {
+  let dino = document.getElementById('dino-image');
+
+  dino.addEventListener('click', function (e) {
+    this.classList.toggle('is-active');
+  });
+
+};
+
 addHandlerBtns();
 addHandlerToggle();
 changeRatio();
+dino();
 
 $('#funstarts').click(function() {
   $('#funstarts').hide();
