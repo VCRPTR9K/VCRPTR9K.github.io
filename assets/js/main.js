@@ -10,7 +10,8 @@ const spoiler = (() => {
       element.addEventListener('click', (e) => {
         e.preventDefault();
         e.currentTarget.parentNode.classList.toggle('is-active');
-
+        document.querySelector('body').classList.toggle('open-spoiler');
+        // document.querySelector('.font-download').classList.toggle('is-active');
         return false;
       });
 
@@ -20,27 +21,30 @@ const spoiler = (() => {
 
 
 $(document).mouseup(function (e) {
-  let $root = $(".js-spoiler");
+  let $root = $(".js-spoiler"),
+    $downloadBtn = $('.font-download');
   if (!$root.is(e.target)
-    && $root.has(e.target).length === 0) {
+    && $root.has(e.target).length === 0 && !$downloadBtn.is(e.target) && $downloadBtn.has(e.target).length === 0) {
 
     $root.removeClass('is-active');
+    $('body').removeClass('open-spoiler');
+    // $downloadBtn.removeClass('is-active');
   }
 });
 
 
-$(".js-spoiler").swipe({
-  swipeStatus: function (event, phase, direction, distance, duration, fingers) {
-    if (phase == "move" && direction == "right") {
-      $(".js-spoiler").addClass("is-active");
-      return false;
-    }
-    if (phase == "move" && direction == "left") {
-      $(".js-spoiler").removeClass("is-active");
-      return false;
-    }
-  }
-});
+// $(".js-spoiler").swipe({
+//   swipeStatus: function (event, phase, direction, distance, duration, fingers) {
+//     if (phase == "move" && direction == "right") {
+//       $(".js-spoiler").addClass("is-active");
+//       return false;
+//     }
+//     if (phase == "move" && direction == "left") {
+//       $(".js-spoiler").removeClass("is-active");
+//       return false;
+//     }
+//   }
+// });
 
 // upload image
 document.getElementById('upload').addEventListener('change', readURL, true);
