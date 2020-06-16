@@ -784,6 +784,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+    padding-right:20px;
 }
 
 .ratio__item.is-active {
@@ -801,9 +802,17 @@ body {
 .rectangle9 {
   width: 15px;
   height: 26px;
-  background: url("../images/916Rectangle.svg");
+  background: url("../images/9Rectangle.svg");
   background-size: 15px 26px;
-  margin: 0 5px 0 30px;
+  margin: 0 5px 0 0px;
+}
+
+.rectangle16 {
+  width: 26px;
+  height: 15px;
+  background: url("../images/16Rectangle.svg");
+  background-size: 26px 15px;
+  margin: 0 5px 0 0px;
 }
 
 input[type=range]::-webkit-slider-thumb {
