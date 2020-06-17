@@ -790,7 +790,9 @@ body {
 .ratio__item.is-active {
   opacity: 1;
 }
-
+.ratio__item:last-child {
+  padding-right: 0 !important;
+}
 .rectangle1 {
   width: 22px;
   height: 22px;
@@ -1232,7 +1234,7 @@ body.open-spoiler .font-download {
   .toolbar {
     -ms-flex-flow: wrap;
     flex-flow: wrap;
-    margin: 20px 20px 0;
+    margin: 20px 15px 0;
     border: none;
     height: auto;
     width: auto;
@@ -1276,9 +1278,9 @@ body.open-spoiler .font-download {
     order: 4;
   }
 
-  .rectangle9 {
+  /* .rectangle9 {
     margin-left: 20px;
-  }
+  } */
 
   .instruction__footer-mobile {
     display: block;
@@ -1402,5 +1404,14 @@ body.open-spoiler .font-download {
 
   #arttext {
     font-size: 50px;
+  }
+  .bw {
+    width: 30%;
+  }
+  .ratio {
+    width: 70%;
+  }
+  .ratio__item {
+    padding-right: 10px;
   }
 }

@@ -1,0 +1,1 @@
+  17/06/2020 13:43:14 CEST: Starting composition “funcky preview”.  Output To: /Users/Yuriy/Desktop/funcky preview.mov    17/06/2020 13:43:21 CEST: Finished composition “funcky preview”.  Total Time Elapsed: 7 SecondsLog closed on 17/06/2020 at 13:43:21 CEST

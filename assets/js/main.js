@@ -47,19 +47,7 @@ $(document).mouseup(function (e) {
 //   }
 // });
 
-// upload image
-document.getElementById('upload').addEventListener('change', readURL, true);
-function readURL() {
-  var file = document.getElementById("upload").files[0];
-  var reader = new FileReader();
-  reader.onloadend = function () {
-    document.getElementById('art').style.backgroundImage = "url(" + reader.result + ")";
-  }
-  if (file) {
-    reader.readAsDataURL(file);
-  } else {
-  }
-}
+
 
 // toolbar
 
@@ -176,6 +164,7 @@ const addHandlerToggle = () => {
 const changeRatio = () => {
   let ratio1 = document.getElementById('ratio1'),
     ratio9 = document.getElementById('ratio9'),
+    ratio16 = document.getElementById('ratio16'),
     container = document.getElementById('art-container');
 
   ratio1.classList.add('is-active');
@@ -183,6 +172,7 @@ const changeRatio = () => {
   ratio1.addEventListener('click', function (e) {
     this.classList.add('is-active');
     ratio9.classList.remove('is-active');
+    ratio16.classList.remove('is-active');
 
     container.style.paddingBottom = '100%';
   });
@@ -190,8 +180,17 @@ const changeRatio = () => {
     this.classList.add('is-active');
 
     ratio1.classList.remove('is-active');
+    ratio16.classList.remove('is-active');
 
     container.style.paddingBottom = '56.25%';
+  });
+  ratio16.addEventListener('click', function (e) {
+    this.classList.add('is-active');
+
+    ratio1.classList.remove('is-active');
+    ratio9.classList.remove('is-active');
+
+    container.style.paddingBottom = 'calc(100% * 16 / 9)';
   });
 };
 

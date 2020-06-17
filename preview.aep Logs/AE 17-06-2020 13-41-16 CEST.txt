@@ -1,0 +1,1 @@
+  17/06/2020 13:41:16 CEST: Starting composition “Comp 1”.  Output To: /Users/Yuriy/Desktop/Comp 1.mov    17/06/2020 13:41:27 CEST: Finished composition “Comp 1”.  Total Time Elapsed: 11 SecondsLog closed on 17/06/2020 at 13:41:27 CEST
