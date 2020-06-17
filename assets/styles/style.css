@@ -444,7 +444,7 @@ input[type=range]::-ms-track {
 }
 
 @font-face {
-  src: url("../fonts/RPTR9K–18.ttf") format("truetype");
+  src: url("../fonts/RPTR9K18.ttf") format("truetype");
   font-family: RPTR9K-18;
 }
 
@@ -545,7 +545,7 @@ body {
 .art {
   /* width: 50%; */
   min-width: 600px;
-  max-width: 900px;
+  max-width: 600px;
 }
 
 .art__container {
@@ -714,11 +714,26 @@ body {
   flex-flow: nowrap;
 }
 
-.bw,
+
+.bw
+ {
+  width: 16%;
+  padding: 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .tp,
 .size,
 .ratio {
-  width: 25%;
+  width: 28%;
   padding: 20px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -906,7 +921,7 @@ input[type=range]::-ms-fill-upper {
 
 .instruction {
   position: absolute;
-  top: 35px;
+  top: 15px;
   left: 0;
   font-family: 'IBM Plex Sans', sans-serif;
   color: rgba(255, 255, 255, 0.6);
@@ -958,7 +973,7 @@ input[type=range]::-ms-fill-upper {
 
 .instruction__content {
   position: absolute;
-  top: 40px;
+  top: 10px;
   left: -1000%;
   -webkit-transition: all .2s ease;
   -o-transition: all .2s ease;
@@ -1248,7 +1263,7 @@ body.open-spoiler .font-download {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    padding: 20px 0;
+    padding: 20px 10px;
   }
 
   .tp {
@@ -1409,7 +1424,7 @@ body.open-spoiler .font-download {
     width: 30%;
   }
   .ratio {
-    width: 70%;
+    width: 50%;
   }
   .ratio__item {
     padding-right: 10px;
