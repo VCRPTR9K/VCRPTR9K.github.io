@@ -175,6 +175,7 @@ const changeRatio = () => {
     ratio16.classList.remove('is-active');
 
     container.style.paddingBottom = '100%';
+container.style.width = '600px';
   });
   ratio9.addEventListener('click', function (e) {
     this.classList.add('is-active');
@@ -183,6 +184,7 @@ const changeRatio = () => {
     ratio16.classList.remove('is-active');
 
     container.style.paddingBottom = '56.25%';
+container.style.width = '600px';
   });
   ratio16.addEventListener('click', function (e) {
     this.classList.add('is-active');
@@ -190,7 +192,9 @@ const changeRatio = () => {
     ratio1.classList.remove('is-active');
     ratio9.classList.remove('is-active');
 
-    container.style.paddingBottom = 'calc(100% * 16 / 9)';
+     container.style.paddingBottom = '100%';
+      container.style.width = '350px';
+    container.style.margin = '0 auto';
   });
 };
 
